@@ -1,0 +1,144 @@
+//destructiv object
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KL</title>
+  </head>
+  <body>
+    <script>
+      
+      let user = {
+        name: "Hello World",
+        course: "JS",
+        done: true,
+      };
+
+      let { name, course, done } = user;
+
+      console.log(user);
+
+      /* Renaming Variables: 
+
+Destructuring mein aap variables ko rename bhi kar sakte hain,
+jo ki dot notation mein seedha nahi hota.
+
+Example:
+
+
+// Destructuring with variable renaming
+
+let { firstName: fName, lastName: lName, age } = user;
+
+
+*/
+   
+/* // Destructuring with default values
+
+let { firstName = "John", lastName, age } = user;
+
+ */
+     
+
+ /*  Destructuring nested objects
+
+ 
+ 
+ let user = { name: { first: "John", last: "Doe" }, age: 30 };
+
+let { name: { first, last }, age } = user; */
+
+
+
+
+
+
+   </script>
+
+   <p>
+    Destructuring ka istemal aapke code ko padhne mein aur likhne mein asaan banane ke liye hota hai, lekin iska khas upayog conditions aur database se data laane mein kaise kiya ja sakta hai, ispe charcha karte hain.
+
+**1. Data Fetch from Database:**
+
+Suppose aap ek database se data fetch kar rahe hain aur returned data ko access karna chahte hain. Destructuring ka istemal aapko data ko easily access karne mein madad karega.
+
+```javascript
+// Assume data fetched from the database
+let userData = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "New York",
+    zip: "10001"
+  }
+};
+
+// Destructuring for easy access
+let { name, age, address: { city, zip } } = userData;
+
+console.log(name);  // "John"
+console.log(age);   // 30
+console.log(city);  // "New York"
+console.log(zip);   // "10001"
+```
+
+Yahan, `userData` object se specific properties ko destructuring ke through access kiya gaya hai.
+
+**2. Function Parameters:**
+
+Aap destructuring ka istemal function parameters mein bhi kar sakte hain. Suppose aap ek function likh rahe hain jo database se aane wale user data ko process kare:
+
+```javascript
+function processUserData({ name, age, address: { city, zip } }) {
+  // Do something with the data
+  console.log(`${name} is ${age} years old and lives in ${city}, ${zip}.`);
+}
+
+// Assume data fetched from the database
+let userData = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "New York",
+    zip: "10001"
+  }
+};
+
+// Calling the function with destructured parameter
+processUserData(userData);
+```
+
+Isme, function `processUserData` ka parameter destructuring ke through direct `userData` object se values ko access karta hai.
+
+**3. Conditional Destructuring:**
+
+Aap destructuring ka istemal conditions ke sath bhi kar sakte hain, jisse aap data ka part access kar sakte hain based on certain conditions.
+
+```javascript
+let userData = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "New York",
+    zip: "10001"
+  }
+};
+
+// Accessing different parts of data based on a condition
+if (userData.age > 25) {
+  let { name, address: { city } } = userData;
+  console.log(`${name} lives in ${city}.`);
+} else {
+  let { age } = userData;
+  console.log(`User is ${age} years old.`);
+}
+```
+
+Yahan, condition ke based on, different parts of `userData` object ko access kiya ja raha hai.
+
+Destructuring ka istemal in scenarios mein aapko code likhne mein aur padhne mein asaan banata hai, aur aapko specific data elements ko efficiently access karne mein madad karta hai.
+   </p>
+  </body>
+</html>
