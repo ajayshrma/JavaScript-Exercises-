@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async & await</title>
+  </head>
+  <body>
+    <script>
+      /*       ///   using normal function
+            async function test() {
+              return "Printing using non arrow function";
+            }
+
+            test().then((result) => console.log(result)); */
+
+      /*  //  using arrow function
+
+            let usingArrowFunc = async () => "Printing Using Arrow Function ";
+
+            usingArrowFunc().then((result) => console.log(result));
+       */
+
+      /* // await function
+
+            let testingAwait = async () => {
+              console.log(`2: Message`);
+           await   console.log(`3: Message`);
+              console.log(`4: Message`);
+            };
+            console.log(`1: Message`);
+
+            testingAwait();
+            console.log(`5: Message`); */
+
+      //using await while fetching data
+
+      async function test() {
+        try {
+          const response = await fetch("./student_data.json"); //here await we use
+          return response.json();
+        } catch (error) {
+          console.log("error hai");
+        }
+      }
+
+      test()
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          console.log("error hai");
+        });
+
+        
+    </script>
+  </body>
+</html>

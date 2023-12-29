@@ -1,0 +1,80 @@
+//here we fetch response 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Methods</title>
+  </head>
+  <body>
+    <!-- Please refer to ./Notes_in_png folder for Diagram Explanation
+         For Practice Use ->>> https://jsonplaceholder.typicode.com/   
+         Free fake API for testing and prototyping.
+    
+    -->
+
+    <script>
+      /*   old way to write
+
+        fetch("https://jsonplaceholder.typicode.com/users").then(function (){
+
+        }).then(function(){
+
+        }).catch(){
+
+        };
+       */
+
+      /*  Writing using arrow function
+
+            fetch("https://jsonplaceholder.typicode.com/users")
+              .then((response) => {
+                return response.json();
+              })
+              .then((result_data) => {
+                console.log(result_data); //data received
+              })
+              .catch((error) => {
+                  console.log("Error Please Check again");
+              });
+
+      */
+
+      /* Shortening Above Code */
+
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((received_data) => {
+          //  console.log(received_data);
+
+          /*  //iterating array using for loop but lots of code to write
+
+          let newarray = 0;
+          for (let i = 0; i < received_data.length; i++) {
+            //   console.log(result_data[i]);
+            received_data[i];
+
+            document.write(
+              `Name: ${received_data[i].name} <br> Phone: ${received_data[i].phone} 
+              <br> City: ${received_data[i].address.city} </br>`
+            );
+          } */
+
+          //another method
+
+          for (const x in received_data) {
+            // you got 10 elements 0 to 9 only their address not value
+
+            document.write(
+              `${received_data[x].name} <br> ${received_data[x].email} <br> `
+            );
+          }
+        })
+
+        .catch((error) => {
+          return console.log("error");
+        });
+    </script>
+  </body>
+</html>

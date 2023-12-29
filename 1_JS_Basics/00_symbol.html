@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol</title>
+  </head>
+  <body>
+    <script>
+      // Creating a symbol
+      let var1 = Symbol();
+
+      // Symbols with a description (optional)
+      let var2 = Symbol("This is a Description");
+      console.log(var2); //output: Symbol(This is a Description)
+
+      //  console.log(var2);
+      let var3 = Symbol(var2.toString());
+      console.log(var3); //outout  - Symbol(Symbol(This is a Description))
+
+      console.log(var2.description); //output: This is a Description
+
+      //Symbol in Objects:
+
+      let age = Symbol();
+      let gender = Symbol("gender");
+
+      let obj1 = {
+        // key: "value"
+
+        name: "Aakash",
+        class: "B.tech 3rd Sem CS",
+        [age]: "23",
+        [gender]: "Male",
+      };
+
+      console.log(JSON.stringify(obj1));
+    </script>
+  </body>
+</html>
