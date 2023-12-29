@@ -1,0 +1,98 @@
+<!-- Object Literals -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let name = "ajay";
+      let course = "Js Course";
+
+      /*  old way to write object 
+
+      let obj1 = {
+        name: name,
+        course: course,
+      };
+
+      console.log(obj1); */
+
+      /*  ES6 new way 
+
+   let obj2 = {
+        name,
+        course,
+      };
+
+      console.log(obj2);
+*/
+
+      /* USe Variable as a property name
+
+      let var_name = "car";
+
+      let obj3 = {
+        [var_name]: "Hyundai",
+        model: "Verna v1",
+      };
+
+      console.log(obj3);  */
+
+      /* we can add funct also  
+
+      let stu_name = "kamlesh";
+
+      let obj4 = {
+        stu_name,
+        course,
+        detail: function () {
+          return `New Student ${this.stu_name} is enroll in ${course}`;
+        },
+      };
+
+      console.log(obj4.detail());
+
+      */
+
+      /* write functions in objects
+
+      let labour_name = "kamlesh";
+
+      let obj5 = {
+        labour_name,
+        course,
+        detail() {
+          return `New Student ${this.labour_name} is enroll in ${course}`;
+        },
+      };
+      // For calling this function wrap into -> [`func_name`]()
+
+      console.log(obj5.detail());  //old way to print
+      console.log(obj5[`detail`]());   //ES6 way to print
+      console.log(typeof obj5["detail"]()); //typeOF is String
+
+      */
+
+      /* ES6 feature - Now Function return objects   
+
+      function student() {
+        return {
+          name,
+          course,
+        };
+      }
+
+      let s = student();  //now s act as object
+      console.log(student());
+
+      console.log(s.course);  //to print oonly course  */
+
+
+      
+    </script>
+  </body>
+</html>

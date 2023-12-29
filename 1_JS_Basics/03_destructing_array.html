@@ -1,0 +1,85 @@
+//destructing array
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D Array</title>
+  </head>
+  <body>
+    <script>
+      let user = ["yahu singh", "313001", "udaipur", ["male", "25000"]]; //array
+
+      let [name, pincode, city, [gender, salary]] = user;
+
+      console.log(name); //without iterate we got array element as separate variables
+      console.log(gender); //also print nested array
+
+      // Array destructuring ka istemal bhi kai different scenarios mein kiya ja sakta hai, jisse aap code likhne mein aur padhne mein asaan ho sake. Yahan kuch use cases hain:
+
+      // 1. **Array Return Values from Functions:**
+
+      //    Agar koi function array return karta hai, to aap uske return value ko destructuring ke through alag variables mein assign kar sakte hain.
+
+      ```javascript
+   function getNumbers() {
+     return [1, 2, 3];
+   }
+
+   // Destructuring the return value of the function
+   let [first, second, third] = getNumbers();
+   console.log(first, second, third); // 1 2 3
+   ```/* // 2. **Array Swapping:**
+
+//    Aap array destructuring ka istemal values ko swap karne mein bhi kar sakte hain. */
+
+      ```javascript
+   let a = 5, b = 10;
+
+   // Using array destructuring to swap values
+   [a, b] = [b, a];
+   console.log(a, b); // 10 5
+   ```/* 3. **Iteration over Arrays:**
+
+   Aap array destructuring ka istemal arrays ke elements ko iterate karne mein bhi kar sakte hain. */
+
+      ```javascript
+   let numbers = [1, 2, 3];
+
+   // Using array destructuring in a loop
+   for (let [index, value] of numbers.entries()) {
+     console.log(index, value);
+   }
+   ```/* 4. **Function Parameters:** 
+
+   Aap array destructuring ka istemal function parameters mein bhi kar sakte hain.
+
+   ```javascript
+
+   function processData([name, age, city]) {
+     console.log(`${name} is ${age} years old and lives in ${city}.`);
+   }
+
+   // Passing an array to the function
+   processData(["John", 30, "New York"]);
+   
+   ```
+  
+
+      /* 5. **Default Values:**
+
+   Array destructuring ke through aap default values bhi set kar sakte hain. */
+
+      ```javascript
+   let numbers = [1];
+
+   // Destructuring with default value
+   let [first, second = 2] = numbers;
+   console.log(first, second); // 1 2
+   ```;
+
+      /* Yeh tareeqe hain jinse array destructuring ka istemal aapke code ko aur bhi expressive aur readable bana sakta hai. Jaise ki objects ke liye, array destructuring bhi code likhne mein aur padhne mein asaan banata hai. */
+    </script>
+  </body>
+</html>
