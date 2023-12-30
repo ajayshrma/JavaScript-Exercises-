@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOPS</title>
+  </head>
+  <body>
+    <script>
+      /* Key Notes
+
+              Class consist of three types of Methods to define
+
+              1: Constructure Method : which is called just by initialize of an object
+              2: prototype Method : need to use dot like : objName.method1(); to calll
+              3: Static Methos : we can't call static method using object we can call using className.methodName().
+
+              */
+
+      class student {
+        constructor() {
+          console.log(`Hey this is Contructor method`);
+        }
+
+        prototypeMethod() {
+          console.log(`Hey this is prototype method`);
+        }
+
+        static staticMethod() {
+          console.log(`Hey this is Static method`);
+        }
+      }
+
+      //creates an object of student class which is meObject
+      //here contructor calle automatic after inintiilize object
+      meObject = new student();
+
+      
+
+      //for prototype method call
+      meObject.prototypeMethod();
+
+
+      //to call static method use clas name
+      student.staticMethod();
+
+
+    </script>
+  </body>
+</html>
