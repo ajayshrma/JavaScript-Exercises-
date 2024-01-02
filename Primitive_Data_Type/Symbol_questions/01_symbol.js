@@ -42,8 +42,6 @@ console.log(person[firstNameSymbol]); // Output: John
 console.log(person.age);  //output 30
 
 
-
-
 //=============Symbol Description===========================
 
 // Creating a Symbol with a description
