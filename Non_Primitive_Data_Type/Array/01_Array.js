@@ -30,9 +30,11 @@ console.log(fruits);
 
 
 
-
 // Exercise-5
 
 const mapArrayFruits = fruits.map(frut=>frut.length);
-console.log(mapArrayFruits);             //[ 6, 6 ] why 6 because papaya total word of 6
+console.log(mapArrayFruits);    //[ 6, 6 ] why 6 because papaya total word of 6
+
+
+
 
