@@ -10,100 +10,125 @@
       //===========================Call Back & CallBAck Hell======================================
 
       /*    function getData(dataId, getNextData) {
-        setTimeout(() => {
-          console.log("data is", dataId);
-          if (getNextData) {
-            getNextData();
-          }
-        }, 2000);
-      }
+             setTimeout(() => {
+               console.log("data is", dataId);
+               if (getNextData) {
+                 getNextData();
+               }
+             }, 2000);
+           }
 
-      //CallBack Hell
+           //CallBack Hell
 
-      getData(1, () => {
-        console.log("gettting data-2 ....");
-        getData(2, () => {
-          console.log("gettting data-3 ....");
-          getData(3, () => {
-            console.log("gettting data-4 ....");
-            getData(4);
-          });
-        });
-      }); */
+           getData(1, () => {
+             console.log("gettting data-2 ....");
+             getData(2, () => {
+               console.log("gettting data-3 ....");
+               getData(3, () => {
+                 console.log("gettting data-4 ....");
+                 getData(4);
+               });
+             });
+           }); */
 
       // ==================================Promises==============================================
 
       /*   let promise = new Promise(function (resolve, reject) {
-        console.log("I am a promise");
-        resolve("success");
-      });
+             console.log("I am a promise");
+             resolve("success");
+           });
 
-      function getData(dataId, getNextData) {
-        return new Promise((res, rej) => {
-          setTimeout(() => {
-            console.log("data:", dataId);
-            res("Sucess");
-            if (getNextData) {
-              getNextData();
-            }
-          }, 2000);
-        });
-      }
+           function getData(dataId, getNextData) {
+             return new Promise((res, rej) => {
+               setTimeout(() => {
+                 console.log("data:", dataId);
+                 res("Sucess");
+                 if (getNextData) {
+                   getNextData();
+                 }
+               }, 2000);
+             });
+           }
 
 
-      let promise = getData(112);
+           let promise = getData(112);
 
- */
+      */
 
       //===================================== then() & Catch() ====================================
-      /* 
-      const getPromise = () => {
-        return new Promise((res, rej) => {
-          console.log("i am a promise");
-          res("Success");   //if resolved .then funct execute
-      //   rej("Network Error")  // if reject then catch execute
-        });
-      };
+      /*
+           const getPromise = () => {
+             return new Promise((res, rej) => {
+               console.log("i am a promise");
+               res("Success");   //if resolved .then funct execute
+           //   rej("Network Error")  // if reject then catch execute
+             });
+           };
 
-      let promise = getPromise();
+           let promise = getPromise();
 
-      //if promise fulfilled .then func execute if reject then Catch func execute okay
-      promise.then((res) => {
-        console.log("Promise Fulfilled", res);
-      });
+           //if promise fulfilled .then func execute if reject then Catch func execute okay
+           promise.then((res) => {
+             console.log("Promise Fulfilled", res);
+           });
 
-      promise.catch((error) => {
-        console.log("Error", error);
-      }); */
+           promise.catch((error) => {
+             console.log("Error", error);
+           }); */
 
       //===================================== Promise Chaining ====================================
 
-      const promiseChaining1 = () => {
-        return new Promise((res, rej) => {
-          setTimeout(() => {
-            console.log("Data1");
-            res("Sucess");
-          });
+      /*            const promiseChaining1 = () => {
+             return new Promise((res, rej) => {
+               setTimeout(() => {
+                 console.log("Data1");
+                 res("Sucess");
+               });
+             });
+           };
+
+           const promiseChaining2 = () => {
+             return new Promise((res, rej) => {
+               setTimeout(() => {
+                 console.log("Data1");
+                 res("Sucess");
+               });
+             }, 3000);
+           };
+
+           promiseChaining1.then(() => {
+             console.log(res);
+             console.log("Fetching Data2..........");
+
+             promiseChaining2.then(() => {
+               console.log(res);
+             });
+           }); */
+
+      //===================================== async await ====================================
+
+      /*   async function f() {
+             let promise = new Promise((resolve, reject) => {
+               setTimeout(() => resolve("done!"), 4000);
+             });
+
+             let result = await promise; // wait until the promise resolves (*)
+             alert(result); // "done!"
+           }
+           f();
+ */
+      //===================================== async await ======================================
+
+      (async function () {
+        let promise = new Promise((resolve, reject) => {
+          setTimeout(() => resolve("done!"), 4000);
         });
-      };
 
-      const promiseChaining2 = () => {
-        return new Promise((res, rej) => {
-          setTimeout(() => {
-            console.log("Data1");
-            res("Sucess");
-          });
-        }, 3000);
-      };
+        let result = await promise; // wait until the promise resolves (*)
+        alert(result); // "done!"
+      })();
 
-      promiseChaining1.then(() => {
-        console.log(res);
-        console.log("Fetching Data2..........");
-
-        promiseChaining2.then(() => {
-          console.log(res);
-        });
-      });
+      
     </script>
   </body>
 </html>
