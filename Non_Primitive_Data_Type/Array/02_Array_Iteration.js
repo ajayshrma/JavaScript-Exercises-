@@ -1,6 +1,6 @@
 // //Using For Loop
 
-// // for star commenting press => shift+alt+A 
+// // for star commenting press => shift+alt+A
 
 // /*For Loop Explanation
 
@@ -13,7 +13,7 @@
 
 // mean o++
 
-// mean 0+1 =1 
+// mean 0+1 =1
 
 // now repeat til 0 become 4<4 & loop ends
 
@@ -26,8 +26,6 @@
 //     console.log(element);
 // }
 
-
-
 // //using for of loop
 
 // // for (const element of array) {
@@ -37,9 +35,8 @@
 // for (const iterator of myArray) {
 
 //     console.log(myArray);
-    
-// }
 
+// }
 
 //using map
 
@@ -50,8 +47,8 @@
 
 const inputArray = [0, 1, 5, 3, 8, 6];
 
-const newArray = inputArray.map(function(element) {
-  return element ;
+const newArray = inputArray.map(function (element) {
+  return element*2;
 });
-
+console.log(inputArray);
 console.log(newArray);
