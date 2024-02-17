@@ -6,7 +6,6 @@
 // What does it mean when a function returns undefined in JavaScript?
 // How can you check if a variable is undefined in a conditional statement? -->
 
-
 /**
  * 1.udefined reresents a variable that has been declared but not yet assigned any value 
  
@@ -31,20 +30,15 @@ console.log(anotherVariable); // Output: undefined
 
 // If a function doesn't explicitly return a value, it implicitly returns undefined.
 
-function func_name()
-{
-  
-}
+function func_name() {}
 
-console.log(func_name());  //output undefined
+console.log(func_name()); //output undefined
 
 //=====Solution:5 ========
 
-
-if(myVariable === undefined) {
-    console.log("undefined");
+if (myVariable === undefined) {
+  console.log("undefined");
 }
-
 
 /**------------Null v/s undefined--------------
  * 
@@ -61,5 +55,4 @@ Indicates the absence of a meaningful value due to the lack of assignment.
 In essence, null is often used when you want to explicitly say that a variable is empty or intentionally lacks a meaningful value. On the other hand, undefined typically indicates that a variable is declared but not assigned a value.
  */
 
-
-var myVariable = null;  // Here, we intentionally set myVariable to null to represent an absence of any meaningful value or object.
+var myVariable = null; // Here, we intentionally set myVariable to null to represent an absence of any meaningful value or object.
