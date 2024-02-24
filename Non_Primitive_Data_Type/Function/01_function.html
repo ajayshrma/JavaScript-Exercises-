@@ -15,18 +15,26 @@
       }
       console.log(sum(1, 2)); //output: undefined
 
-      //return undefined if we do nort write return keyword
+      //return undefined if we do not write return keyword
 
-     // Example-2
-
-      function sum(x, y) {
-        return x + y;
-        console.log("hello world");   
-      }
-      console.log(sum(1, 2)); //output: undefined
+      // Example-2
 
 
       
+
+      function sum(x, y) {
+        return x + y;
+        console.log("hello world"); //it will not run
+      }
+      console.log(sum(1, 2)); //output: undefined
+
+      // Example-3
+
+      function checkingThiskeyword() {
+        let myvar = 20;
+        console.log(this.myvar);
+      }
+      checkingThiskeyword();
     </script>
   </body>
 </html>
