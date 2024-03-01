@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoisting</title>
+  </head>
+  <body>
+    <script>
+      console.log(a);
+      var a = "Ajay";
+
+      sayHi();
+      sayHello();
+      //function declaration / definition
+      function sayHi() {
+        console.log("hello there");
+      }
+
+      //finction expression/definition
+      const sayHello = function () {
+        console.log("helo hello");
+      };
+    </script>
+  </body>
+</html>
